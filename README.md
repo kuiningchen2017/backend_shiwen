@@ -78,3 +78,5 @@ git merge命令用于合并指定分支到当前分支
 git merge dev
 
 删除分支：git branch -d <name>
+
+用来测试下分支~~~
