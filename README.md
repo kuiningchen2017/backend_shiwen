@@ -80,3 +80,5 @@ git merge dev
 删除分支：git branch -d <name>
 
 用来测试下分支~~~
+
+我在我自己的分支kuiningchen上修改了内容~~~
