@@ -53,6 +53,31 @@ webpack.prod.js 生产环境使用   production 生产
     4 构建前清除上一次构建的内容
 webpack.conf.js 公用配置
 
+项目结构：
+    build文件夹  用来存放项目构建脚本
+        build.js 命令npm run build的入口配置文件，主要用于生产环境。
+    config文件夹  存放项目的一些基本配置信息，最常用的就是修改端口号。
+    node_modules 这个目录存放的是项目的所有依赖，即 npm install 命令下载下来的文件
+    src 这个目录下存放项目的源码，即开发者写的代码放在这里
+        assets 一般存放项目ui设计图
+        components 目录用来存放组件（一些可复用，非独立的页面），当然开发者也可以在 components 中直接创建完整页面。
+        推荐在 components 中存放组件，另外单独新建一个 page 文件夹，专门用来放完整页面。
+        App.vue 是一个Vue组件，也是项目的第一个Vue组件
+            有三部分： 1， 页面模板（template） 2， 页面脚本（script） 3，页面样式（style）
+            页面模板中有一个router-view 这个指展示路由页面的位置，可以理解为一个占位符，这个占位符展示的内容将根据URL地址来决定
+                具体展示内容，要参考路由表，即router/index.js文件
+            页面脚本主要是实现当前页面数据初始化、事件处理等等操作。
+        main.js相当于Java中的main方法，是整个项目的入口js
+            在main.js中首先导入Vue对象
+            导入第一个Vue组件App.vue
+            导入router
+            所有东西都导入成功后，创建一个Vue对象。 设置Vue处理的节点'#app'。
+            Vue配置项里 声明components导入App这个组件。
+                       template中定义了页面模板，即将App组件中的内容渲染到'#app'这个div中。
+    static 用来存放静态资源
+    index.html 则是项目的首页，入口页，也是整个项目唯一的HTML页面
+    package.json 中定义了项目的所有依赖，包括开发时依赖和发布时依赖
+
 
 
 git add命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行git commit就可以一次性把暂存区的所有修改提交到分支。
