@@ -21,8 +21,13 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 # author
-dependencies 生成环境
+
+https://lin-xin.gitee.io/example/work/#/login
+
+dependencies 生成环境   dependencies 依赖性
 devDependencies 开发环境
+
+vue-cli 是 vue官方提供的构建工具（脚手架） 大大降低了我们自己用webpack配置项目的难度
 vue-cli生成的项目帮我们做了哪些东西？
 · 1, ES6代码转换成ES5
 · 2, scss/sass/stylus 转成 css
@@ -37,16 +42,18 @@ url-loader 功能与 file-loader 类似，如果文件小于限制的大小。�
 
 vue-loader 用于解析.vue文件
 
-webpack.dev.js 开发环境使用
+webpack.dev.js 开发环境使用  development 开发
     1 不需要压缩代码
     2 需要热更新
     3 css不需要提取到css文件
-webpack.prod.js 生产环境使用
+webpack.prod.js 生产环境使用   production 生产
     1 需要压缩代码
     2 不需要热更新
     3 css需要提取到css文件
     4 构建前清除上一次构建的内容
 webpack.conf.js 公用配置
+
+
 
 git add命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行git commit就可以一次性把暂存区的所有修改提交到分支。
 
@@ -58,7 +65,7 @@ git add命令实际上就是把要提交的所有修改放到暂存区（Stage�
 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。
 
 
-要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；  remote遥远的  origin起源
 
 关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
 
