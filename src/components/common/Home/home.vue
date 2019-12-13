@@ -1,20 +1,27 @@
 <template>
     <div class="wrapper">
         <VHeader></VHeader>
+        <VSidebar></VSidebar>
         <div class="content">
+            content
+            <transition name="move" mode="out-in">
+                <router-view></router-view>
+            </transition>
         </div>
     </div>
 </template>
 
 <script>
 import VHeader from '../Header/header.vue'
+import VSidebar from '../Sidebar/Sidebar.vue'
 export default {
   name: 'home',
   data () {
     return {}
   },
   components: {
-    VHeader
+    VHeader,
+    VSidebar
   }
 }
 </script>

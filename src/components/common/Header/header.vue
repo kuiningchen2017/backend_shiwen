@@ -21,7 +21,8 @@
 <script>
 import avatar from '../../../assets/login-background.jpg'
 export default {
-  name: 'header',
+  // vue.esm.js [Vue warn]: Do not use built-in or reserved HTML elements as component id: header
+  // name: 'header',
   data () {
     return {
       username: 'ckn',
