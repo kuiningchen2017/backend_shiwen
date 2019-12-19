@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/page/login'
 import Home from '@/components/common/Home/home'
-import Audit from '@/components/page/audit-page'
+import Resource from '@/components/page/resource-page'
 
 Vue.use(Router)
 
@@ -23,9 +23,9 @@ export default new Router({
       component: Home,
       children: [
         {
-          path: '/audit',
-          name: 'audit',
-          component: Audit
+          path: '/resource',
+          name: 'resource',
+          component: Resource
         }
       ]
     }

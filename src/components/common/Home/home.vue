@@ -3,7 +3,6 @@
         <VHeader></VHeader>
         <VSidebar></VSidebar>
         <div class="content">
-            content
             <transition name="move" mode="out-in">
                 <router-view></router-view>
             </transition>

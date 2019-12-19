@@ -35,12 +35,12 @@ export default {
       items: [
         {
           icon: 'el-icon-s-custom',
-          index: '2',
-          title: '关于师问号',
+          index: '1',
+          title: '资源管理',
           subs: [
             {
-              index: 'audit',
-              title: '审核师问号'
+              index: 'resource',
+              title: '资源列表'
             }
           ]
         },

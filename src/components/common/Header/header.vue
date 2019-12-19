@@ -4,6 +4,7 @@
             师问号后台管理系统
         </div>
         <div class="user_info">
+            <!-- trigger属性设置为click即可改变我click激活 -->
             <el-dropdown  trigger="click" @command="handleCommand">
                 <span class="el-dropdown-link">
                     <img class="user-logo" :src=avatar>
@@ -11,7 +12,9 @@
                     <i class="el-icon-caret-bottom"></i>
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item command="loginout">退出登陆</el-dropdown-item>
+                    <div v-for="(item, index) in SW_Numbers" :key="index">
+                        <el-dropdown-item :command="item.command ? item.command : index">{{item.username}}</el-dropdown-item>
+                    </div>
                 </el-dropdown-menu>
             </el-dropdown>
         </div>
@@ -25,12 +28,21 @@ export default {
   // name: 'header',
   data () {
     return {
-      username: 'ckn',
-      avatar: avatar
+      username: '师问号姓名',
+      avatar: avatar,
+      SW_Numbers: [
+        {username: '师问号一', avatar: avatar, command: '师问号一'},
+        {username: '师问号二', avatar: avatar, command: '师问号二'},
+        {username: '师问号三', avatar: avatar, command: '师问号三'},
+        {username: '退出登录', avatar: avatar, command: 'loginout'}
+      ]
     }
   },
   methods: {
     handleCommand (command) {
+      this.$message('切换到师问号：' + command)
+      // 修改header头部的切换后的状态
+      this.username = command
       if (command === 'loginout') {
         this.$router.push('/login')
       }
