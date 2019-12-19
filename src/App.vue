@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-      <router-view class="app-page"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -12,12 +11,6 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    @import "../static/css/main.css";  /*全局样式 默认css样式*/
+    @import "../static/css/color-green.css"; /*主题色*/
 </style>
