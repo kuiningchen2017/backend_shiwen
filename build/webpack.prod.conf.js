@@ -7,6 +7,9 @@ const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// 用于从webpack生成的bundle中提取文本到特定文件中的插件
+// 可以抽取出css，js文件将其与webpack输出的bundle分离
+// 如果我们想用webpack打包成一个文件，css js分离开，需要这个插件
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -23,16 +26,18 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   output: {
-    path: config.build.assetsRoot,
-    filename: utils.assetsPath('js/[name].[chunkhash].js'),
-    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
+    path: config.build.assetsRoot, // 编译输出目录
+    filename: utils.assetsPath('js/[name].[chunkhash].js'), // 编译输出文件名格式
+    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js') // 没有指定输出名的文件输出的文件名格式
   },
+  // 重新配置插件项
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
+    // 位于开发环境下
     new webpack.DefinePlugin({
       'process.env': env
     }),
-    new UglifyJsPlugin({
+    new UglifyJsPlugin({ // 丑化压缩代码
       uglifyOptions: {
         compress: {
           warnings: false
@@ -41,7 +46,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       sourceMap: config.build.productionSourceMap,
       parallel: true
     }),
-    // extract css into its own file
+    // extract css into its own file 将css解压缩到它自己的文件中
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.

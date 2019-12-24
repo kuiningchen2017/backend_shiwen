@@ -2,10 +2,12 @@
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
+// 使用webpack配置合并插件
 const merge = require('webpack-merge')
 const path = require('path')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+// 一个用于生成HTML文件并自动注入依赖文件（link/script）的webpack插件
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
@@ -14,6 +16,7 @@ const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
 const devWebpackConfig = merge(baseWebpackConfig, {
+  // 配置样式文件的处理规则，使用styleLoaders
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
   },
