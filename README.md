@@ -29,6 +29,24 @@ dependencies 生成环境   dependencies 依赖性
 
 devDependencies 开发环境
 
+npm install module_name -S    即    npm install module_name --save    写入dependencies
+
+npm install module_name -D    即    npm install module_name --save-dev 写入devDependencies
+
+npm install module_name -g 全局安装(命令行使用)
+
+npm install module_name 本地安装(将安装包放在 ./node_modules 下)
+
+
+
+dependencies与devDependencies有什么区别呢？
+
+devDependencies 里面的插件只用于开发环境，不用于生产环境
+
+dependencies 是需要发布到生产环境的
+
+
+
 vue-cli 是 vue官方提供的构建工具（脚手架） 大大降低了我们自己用webpack配置项目的难度
 
 vue-cli生成的项目帮我们做了哪些东西？
